@@ -30,20 +30,23 @@ Derived dataset
 ---------------
 
 Derived data set was created from the original one with the following steps:
-1. Data from files X_*.txt, y_*.txt, subject_*.txt from "UCI HAR Dataset/test/" directory  were appended to corresponding data from "UCI HAR Dataset/train/" directory.
-1. Only *-mean() and *-std() columns were extracted (note that *-meanFreq() columns were discarded)/That leaves us only 66 columns out of 561.
+
+1. Data from files X_\*.txt, y_\*.txt, subject_\*.txt from "UCI HAR Dataset/test/" directory  were appended to corresponding data from "UCI HAR Dataset/train/" directory.
+1. Only \*-mean() and \*-std() columns were extracted (note that *-meanFreq() columns were discarded)/That leaves us only 66 columns out of 561.
 1. Data from subject were appended as an "subject" column
 1. Data y*.txt were merged with UCI HAR Dataset/activity_labels.txt and appended as extra column ("activity") as well
 1. Combined data set was aggregated by activity and subject and average (mean) was calculated by those groups. Only combinations that have data was included into out dataset.
 1. Dataset was written into tidy.txt file
 
-tidy.txt data set is a fixed-width file.
+`tidy.txt`  is a fixed-width file.
 
 Columns are:
 
+
 | **Name** | **Column's starting position** | **Description** |
- activity                    | 1           | Its activity label. See activity_labels.txt in zip file.
- subject                     | 20          | An identifier of the subject who carried out the experiment.
+| -------- | ------------------------------ | --------------- |
+ activity                    | 1           | Activity label. See activity_labels.txt in zip file. |
+ subject                     | 20          | An identifier of the subject who carried out the experiment. |
  tBodyAcc-mean()-X,Y,Z       | 23,33,45    | Mean of tBodyAcc-mean()-X,Y,Z measurement for particular activity and subject
  tBodyAcc-std()-X,Y,Z        | 56,67,78    | Mean of tBodyAcc-std()-X,Y,Z measurement for particular activity and subject
  tGravityAcc-mean()-X,Y,Z    | 89,99,111   | Mean of tGravityAcc-mean()-X,Y,Z measurement for particular activity and subject
