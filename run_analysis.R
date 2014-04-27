@@ -5,7 +5,7 @@ library(gdata)
 # Parameters:
 #     output  -- output file name where clean dataset will be stored (default = tidy.txt)
 #     zipfile -- zipfile with archived original data set (default ="UCI_HAR_Dataset.zip"). See comments on prepareDataSets() function.
-# Returns nothing, in the process creates output file.
+# Returns clean&tide data set; in the process writes dataset into output file.
 #
 run_analysis <- function(output="tidy.txt", zipfile="UCI_HAR_Dataset.zip") {
     wd <- getwd()
@@ -13,6 +13,7 @@ run_analysis <- function(output="tidy.txt", zipfile="UCI_HAR_Dataset.zip") {
     tide <- tideDataSet()
     setwd(wd)
     write.fwf(tide, output)
+    tide
 }
 
 # Prepares data set for processing.
